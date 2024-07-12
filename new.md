@@ -243,6 +243,134 @@ The NIST Cybersecurity Framework (CSF) defines five core functions to manage cyb
 4. **Hands-on (Security Policy Update):**  Review your existing password policy and propose updates to strengthen password complexity requirements and enforce multi-factor authentication (MFA).
 5. **Cloud Security:** Discuss the concept of cloud security posture management (CSPM) and its benefits for maintaining a secure cloud environment.
 
+## Set 3: Answers and Evaluation Criteria
+
+**1. Hands-on (Web Security Scripting):**
+
+**Expected Answer:**
+
+**Example (Python Script using Requests and a Scanner Library):**
+
+```python
+import requests
+from vulnerability_scanner import scan_for_vulnerabilities  # Replace with your chosen library
+
+def scan_website(url):
+  response = requests.get(url)
+  vulnerability_report = scan_for_vulnerabilities(response.text, url)  # Scanner library function call
+  if vulnerability_report:
+    print(f"Potential vulnerabilities found on {url}:")
+    for vulnerability in vulnerability_report:
+      print(f"\t- {vulnerability['type']}: {vulnerability['details']}")
+  else:
+    print(f"No vulnerabilities detected on {url}.")
+
+# Example usage
+website_url = "https://www.example.com"
+scan_website(website_url)
+```
+
+**Note:** Replace `vulnerability_scanner` with the actual library name (e.g., WAFW00L [NOT RECOMMENDED FOR PRODUCTION USE DUE TO LEGAL RESTRICTIONS], WPScan). These libraries often have specific usage instructions, so consult their documentation.
+
+**Evaluation Criteria:**
+
+* The script utilizes a web vulnerability scanner library to analyze the website content.
+* The script automates the scanning process for a given website URL.
+* The script parses the scanner output and reports potential vulnerabilities with details (type and description).
+
+**2. Situation-based (Network Security):**
+
+**Expected Answer:**
+
+1. **Identify Suspicious Activity:** Analyze network traffic logs for anomalies like:
+    * Unusual traffic patterns (increased bandwidth usage, unexpected source/destination IPs)
+    * Failed login attempts from unknown locations
+    * Access attempts to critical resources
+
+2. **Isolate the Compromised Device:**
+    * Use network traffic analysis tools to identify the compromised device's IP address.
+    * Quarantine the infected device by blocking its network access from other devices.
+
+3. **Investigation:**
+    * Analyze system logs on the compromised device for signs of intrusion (unusual processes, unauthorized access attempts).
+    * Utilize forensic tools to identify the nature of the attack and any compromised data.
+
+4. **Containment & Recovery:**
+    * Patch vulnerabilities on the compromised device and other potentially vulnerable systems.
+    * Implement additional security controls to prevent future attacks.
+    * Restore affected systems from backups if necessary.
+
+**Evaluation Criteria:**
+
+* Demonstrates a systematic approach to identifying a network intrusion.
+* Describes steps to isolate the compromised device and prevent further damage.
+* Emphasizes the importance of investigating the root cause and implementing recovery measures.
+
+**3. Theoretical (Secure Coding):**
+
+**Expected Answer:**
+
+The OWASP Top 10 web application security risks are a list of the most prevalent threats faced by web applications. Secure coding practices can mitigate these vulnerabilities:
+
+* **Injection:** (SQLi, XSS) - Validate and sanitize user input to prevent malicious code injection.
+* **Broken Authentication:** Implement strong password hashing, enforce session management best practices.
+* **Sensitive Data Exposure:** Encrypt sensitive data at rest and in transit, restrict access based on the principle of least privilege.
+* **Security Misconfigurations:** Follow secure coding principles and guidelines for specific programming languages and frameworks.
+* **Broken Session Management:** Utilize secure session tokens with expiration times, prevent session hijacking techniques.
+* **Insecure Direct Object References:** Validate and sanitize user input to prevent unauthorized access to sensitive resources.
+* **Security Misconfiguration:** Follow secure server configuration guidelines, keep software and libraries updated.
+* **Cross-Site Scripting (XSS):** Escape user input before displaying it on the web page to prevent script injection.
+* **Insecure Deserialization:** Implement secure deserialization libraries that validate and sanitize untrusted data.
+* **Using Components with Known Vulnerabilities:** Keep libraries and frameworks updated to address known vulnerabilities.
+
+**Evaluation Criteria:**
+
+* Accurately identifies the OWASP Top 10 web application security risks.
+* Explains how secure coding practices can mitigate each vulnerability type.
+* Demonstrates an understanding of the importance of secure coding for web application security.
+
+**4. Hands-on (Security Policy Update):**
+
+**Expected Answer:**
+
+**Review Existing Password Policy:**
+
+* Minimum password length requirement (should be at least 12 characters)
+* Complexity requirements (uppercase, lowercase, numbers, special characters)
+* Password history (prevent reuse of recent passwords)
+
+**Proposed Updates:**
+
+* Increase minimum password length requirement.
+* Enforce stronger complexity requirements (e.g., minimum number of character types).
+* Implement mandatory password rotation (e.g., every 3 months).
+* Enforce Multi-factor Authentication (MFA) for all user accounts.
+
+
+**5. Cloud Security:**
+
+**Expected Answer:**
+
+Cloud Security Posture Management (CSPM) is a process and technology that helps organizations continuously monitor and manage the security posture of their cloud environments. It provides visibility into security risks, misconfigurations, and potential compliance issues across cloud resources (IaaS, PaaS, SaaS).
+
+**Benefits of CSPM:**
+
+* **Improved Security Visibility:**  Provides a centralized view of security posture across the entire cloud environment.
+* **Proactive Threat Detection:**  Identifies potential security risks and misconfigurations before they can be exploited.
+* **Enhanced Compliance Management:**  Helps organizations meet regulatory compliance requirements for cloud security. 
+* **Streamlined Security Operations:** Automates security tasks and simplifies security management in the cloud.
+* **Reduced Security Costs:**  Proactive identification and mitigation of security issues helps avoid costly breaches.
+
+**Evaluation Criteria:**
+
+* Accurately defines the concept of Cloud Security Posture Management (CSPM).
+* Explains the key benefits of CSPM for maintaining a secure cloud environment.
+* Demonstrates an understanding of how CSPM helps organizations manage security risks and compliance in the cloud.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 **Set 4**
 
 1. **Hands-on (Password Hashing):**  Write a script (pseudocode or specific language) to demonstrate how password hashing works. The script should take a plain-text password as input and generate a secure hash using a common hashing algorithm (e.g., SHA-256).
