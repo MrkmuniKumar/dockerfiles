@@ -787,3 +787,65 @@ Demonstrates an understanding of secure IaC practices like least privilege and s
   * **Part A:** Explains the importance of IAM in a multi-tenant cloud environment, including granular access control mechanisms for users and resources (e.g., IAM roles, policies).
   * **Part B:** Identifies best practices for securing container registries, including strong access control (e.g., RBAC for registry access), vulnerability scanning for container images before pushing to the registry, and potentially integrating with vulnerability databases for threat intelligence.
 
+
+## Set 8: Security Concepts and Practices (Cryptography, HSMs, and Payment Applications)
+
+**1. Threat Modeling and Payment Applications**
+
+**Scenario:** You are developing a new mobile payment application that allows users to make secure in-app purchases and contactless payments at stores. Create a threat model that identifies potential threats and vulnerabilities associated with user accounts, payment transactions, and data security.
+
+**Expected Answer:**
+
+* **Data Flow:** Diagram the application workflow, including user registration, login, payment authorization process (with integration to payment gateways), and data storage of user information and transaction details.
+* **Threats:** Identify potential threats at each stage, such as account takeover attacks, man-in-the-middle attacks during transactions, data breaches in the mobile app or backend systems, and malware injection.
+* **Vulnerabilities:** Analyze potential vulnerabilities in the application or system that could be exploited by the identified threats (e.g., weak password security, insecure communication channels, lack of data encryption, inadequate input validation).
+* **Countermeasures:** Propose mitigation strategies to address the identified vulnerabilities (e.g., strong password hashing with multi-factor authentication, secure communication protocols like HTTPS, data encryption at rest and in transit, secure coding practices).
+
+**Evaluation Criteria:**
+
+* The threat model accurately reflects the data flow of the mobile payment application.
+* Potential threats and vulnerabilities are identified for user accounts, payment transactions, and data security.
+* Countermeasures are proposed to address the identified vulnerabilities and mitigate the associated threats.
+
+**2. Cryptography and Key Management**
+
+**Question:** Describe the difference between symmetric and asymmetric encryption and their use cases in securing data within a payment application.  
+
+**Evaluation Criteria:**
+
+* Explains the concept of symmetric and asymmetric encryption, including key management differences (shared vs. public/private key pairs).
+* Identifies use cases for each in the context of a payment application (e.g., symmetric encryption for user credentials and transaction details at rest, asymmetric encryption for secure communication with payment gateways). 
+
+**3. Hands-on Activity (Secure Communication with HTTPS)**
+
+**Scenario:** You are tasked with configuring a secure connection for the mobile payment application's communication with the payment gateway.
+
+* Explain the role of HTTPS in securing communication channels and how it protects against man-in-the-middle attacks.
+* Describe the steps involved in configuring HTTPS for the application, including obtaining an SSL/TLS certificate and configuring the server to use it.
+* Briefly discuss the importance of certificate validation on the client-side (mobile app) to ensure secure communication.
+
+**Evaluation Criteria:**
+
+* Demonstrates an understanding of HTTPS and its role in securing communication channels by encrypting data and authenticating servers.
+* Provides a clear explanation of the steps involved in configuring HTTPS for the application, including certificate acquisition and server configuration.
+* Discusses the importance of client-side certificate validation to prevent man-in-the-middle attacks and ensure trust in the server's identity.
+
+**4. Hardware Security Modules (HSMs)**
+
+**Question:** Explain the benefits and limitations of using Hardware Security Modules (HSMs) for managing cryptographic keys in a payment application environment. 
+
+**Evaluation Criteria:**
+
+* Explains the benefits of HSMs in securing cryptographic keys, such as tamper-resistant hardware and dedicated processing power for encryption/decryption.
+* Discusses potential limitations of HSMs, such as cost and complexity of integration, compared to software-based key management solutions.
+
+**5. Certification Management**
+
+**Question:** Describe the importance of managing and validating digital certificates used for secure communication in a payment application. 
+
+**Evaluation Criteria:**
+
+* Explains the role of digital certificates in establishing trust during secure communication channels (e.g., HTTPS) and verifying server identity.
+* Discusses the importance of certificate lifecycle management, including certificate validation on the client-side, certificate revocation mechanisms, and certificate renewal procedures.
+
+
