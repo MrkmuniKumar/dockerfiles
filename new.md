@@ -492,7 +492,6 @@ else:
 * The script identifies log entries that might indicate potential security incidents.
 * It demonstrates basic log analysis capabilities to detect anomalies.
 
-I apologize for the incomplete answer in the previous response. Here's the full answer for question 5 (Container Security) including best practices for vulnerability scanning:
 
 **5. Container Security:**
 
@@ -663,3 +662,56 @@ Accurately defines the concept of Infrastructure as Code (IaC) in the context of
 Explains the benefits of IaC for security, including consistency, repeatability, and auditability.
 Identifies potential security considerations associated with IaC, such as misconfigurations and access control.
 Demonstrates an understanding of secure IaC practices like least privilege and security scanning.
+--------------------------------------------------------------------------
+
+## Set 6: Hands-on, Security Concepts, and Data Flow Diagram
+
+**1. Hands-on (Security Automation):**
+
+**Scenario:** You are tasked with automating the process of detecting and patching vulnerabilities on your company's web servers. Describe how you would achieve this using a security automation tool.
+
+**Evaluation Criteria:**
+
+* Explains the concept of security automation and its benefits for vulnerability management.
+* Describes the steps involved in using a security automation tool for vulnerability scanning and patching.
+* Identifies key considerations like scheduling scans, prioritizing vulnerabilities, and automating patch deployment (if applicable).
+
+**2. Security Concepts (Zero Trust Security):**
+
+**Explain the core principles of Zero Trust Security and how it differs from traditional perimeter-based security models.**
+
+**Evaluation Criteria:**
+
+* Accurately defines the concept of Zero Trust Security.
+* Explains the key principles of Zero Trust (e.g., least privilege, continuous verification, never trust, always verify).
+* Contrasts Zero Trust with traditional perimeter-based security approaches.
+
+**3. Data Flow Diagram:**
+
+**Create a data flow diagram for a mobile banking application that utilizes a microservices architecture. The diagram should depict the interaction between the mobile app, authentication service, account service, transaction service, and a database.**
+
+**Evaluation Criteria:**
+
+* The diagram clearly represents the microservices involved (mobile app, authentication, account, transaction).
+* Data flows are accurately depicted between the mobile app, services, and database.
+* The diagram illustrates the interaction for user authentication, account access, and transaction processing.
+
+**4. Hands-on (Security Policy Enforcement):**
+
+**You are updating your company's password policy. Describe the specific security controls you would implement to enforce the new policy and ensure user compliance.**
+
+**Evaluation Criteria:**
+
+* Identifies technical controls for enforcing password complexity requirements (e.g., password length, character types).
+* Explains user education and awareness initiatives to promote strong password practices.
+* Discusses potential monitoring and auditing mechanisms to track password compliance.
+
+**5. Security Concepts (Social Engineering):**
+
+**Describe different social engineering techniques attackers use and how employees can be trained to identify and avoid them.**
+
+**Evaluation Criteria:**
+
+* Explains common social engineering techniques (e.g., phishing, pretexting, baiting).
+* Identifies red flags and suspicious behaviors associated with social engineering attempts.
+* Discusses training methods to educate employees on social engineering tactics and best practices for avoiding them (e.g., verification procedures, not clicking suspicious links).
