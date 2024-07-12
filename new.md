@@ -134,6 +134,107 @@ STRIDE is a threat modeling methodology used to identify potential security thre
 4. **Hands-on (Security Scripting):** Write a basic script (pseudocode or specific language) to scan a list of IP addresses for open ports using a common vulnerability scanner tool.
 5. **NIST:** Briefly describe the NIST Cybersecurity Framework (CSF) core functions and their role in managing cybersecurity risk.
 
+## Set 2: Answers and Evaluation Criteria
+
+**1. Hands-on (DevOps & Security):**
+
+**Expected Answer:**
+
+* Create a DevOps pipeline diagram with stages representing the SDLC phases (e.g., Code Commit, Build, Test, Deploy).
+* Integrate security testing activities within each stage:
+    * **Code Commit:** Use static code analysis tools to identify potential vulnerabilities in code during commit.
+    * **Build:** Automate security scans during the build process to detect vulnerabilities in compiled code or libraries.
+    * **Test:** Include security testing tools like dynamic application security testing (DAST) and penetration testing as part of the testing process.
+    * **Deploy:** Implement vulnerability scanning and security configuration checks before deploying the application to production.
+
+**Evaluation Criteria:**
+
+* The diagram clearly depicts the SDLC stages and DevOps pipeline flow.
+* Security testing activities are strategically placed within each relevant stage.
+* The explanation demonstrates an understanding of how security is integrated throughout the development lifecycle.
+
+**2. Situation-based (ITIL):**
+
+**Expected Answer:**
+
+Utilize the ITIL incident management process to address the surge in incident tickets:
+
+* **Identification:** Categorize the incidents related to the software update (e.g., installation failure, functional issues).
+* **Logging & Classification:** Log all incidents with details like user reports, symptoms, and timestamps. Classify them based on severity and impact.
+* **Prioritization:** Prioritize incidents based on urgency and potential business disruption.
+* **Ownership & Assignment:** Assign incidents to qualified support personnel for troubleshooting.
+* **Resolution & Recovery:** Implement solutions to resolve the incidents and restore normal operations. 
+* **Closure:** Document the resolution process, lessons learned, and updates for future reference.
+* **Communication:** Communicate with affected users throughout the incident management process, keeping them informed about the status and resolution steps.
+
+**Evaluation Criteria:**
+
+* Accurately describes the key steps in the ITIL incident management process.
+* Demonstrates a logical approach to handling a surge in incident tickets related to a software update.
+* Emphasizes the importance of communication and documentation during incident resolution.
+
+**3. Theoretical (CISM):**
+
+**Expected Answer:**
+
+Information security governance (ISG) is the framework that ensures an organization's information assets are adequately protected. CISM defines five key components of ISG:
+
+* **Strategy & Management:** Aligning security strategy with business objectives, establishing security policies.
+* **Risk Management:** Identifying, analyzing, and mitigating information security risks.
+* **Information Security Architecture & Design:**  Designing secure systems and infrastructure to protect information.
+* **Implementation & Operation:** Implementing security controls, managing security incidents.
+* **Measurement & Evaluation:** Monitoring security effectiveness, measuring security performance.
+
+**Evaluation Criteria:**
+
+* Provides a clear definition of information security governance.
+* Accurately identifies the five key components of ISG according to the CISM framework.
+* Explains the significance of each component in achieving effective information security.
+
+**4. Hands-on (Security Scripting):**
+
+**Example (Python Script using Nmap):**
+
+```python
+import nmap
+
+scanner = nmap.PortScanner()
+
+def scan_ports(ip_list):
+  for ip in ip_list:
+    response = scanner.scan(ip, arguments='-sT -Pn')  # TCP SYN scan, no banners 
+    if response['scan'][ip]['status']['state'] == 'up':
+      print(f"IP: {ip} - Open Ports: {', '.join(response['scan'][ip]['tcp'].keys())}")
+
+# Example usage
+ip_list = ["192.168.1.1", "10.0.0.1"]
+scan_ports(ip_list)
+```
+
+**Evaluation Criteria:**
+
+* The script utilizes a vulnerability scanner library (e.g., Nmap) for scanning purposes.
+* The script scans a list of IP addresses for open ports.
+* The script outputs information about identified open ports on each scanned IP.
+
+**5. NIST:**
+
+**Expected Answer:**
+
+The NIST Cybersecurity Framework (CSF) defines five core functions to manage cybersecurity risk:
+
+* **Identify:** Identify and prioritize assets, threats, and vulnerabilities within the organization.
+* **Protect:** Implement security controls to protect assets from identified threats and vulnerabilities.
+* **Detect:** Employ detection methods to identify and report security incidents in a timely manner.
+* **Respond:** Contain, eradicate, and recover from security incidents effectively.
+* **Recover:** Restore functionality of systems and data after a security incident.
+
+**Evaluation Criteria:**
+
+* Accurately describes the five core functions of the NIST Cybersecurity Framework.
+* Explains the role of each function in managing cybersecurity risk.
+* Demonstrates an understanding of the comprehensive approach advocated by the
+
 **Set 3**
 
 1. **Hands-on (Web Security Scripting):** Write a script (pseudocode or specific language) to automate the process of scanning a website for common vulnerabilities like SQL injection and cross-site scripting (XSS) using a publicly available web vulnerability scanner library. 
