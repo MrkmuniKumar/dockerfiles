@@ -379,10 +379,287 @@ Cloud Security Posture Management (CSPM) is a process and technology that helps 
 4. **Hands-on (Security Logging):**  Write a script (pseudocode or specific language) to parse system logs and identify potential suspicious activity based on predefined log entries.
 5. **Container Security:** Discuss best practices for securing container registries, including access control and vulnerability scanning.
 
+## Set 4: Answers and Evaluation Criteria
+
+**1. Hands-on (Password Hashing):**
+
+**Expected Answer:**
+
+**(Example Script - Python)**
+
+```python
+import hashlib
+
+def hash_password(password):
+  """Hashes a plain-text password using SHA-256."""
+  # Encode password as bytes
+  encoded_password = password.encode()
+  # Generate hash using SHA-256 algorithm
+  hashed_password = hashlib.sha256(encoded_password).hexdigest()
+  return hashed_password
+
+# Example usage
+plain_text_password = "your_password"
+hashed_password = hash_password(plain_text_password)
+print(f"Hashed password: {hashed_password}")
+```
+
+**Evaluation Criteria:**
+
+* The script defines a function to hash a password using a secure hashing algorithm (e.g., SHA-256).
+* The script takes plain-text password as input and returns the generated hash.
+* The script demonstrates the one-way nature of hashing (cannot retrieve original password from the hash).
+
+**2. Situation-based (Incident Response & Forensics):**
+
+**Expected Answer:**
+
+**(Initial Steps)**
+
+1. **Contain the Threat:**
+    * Isolate the infected systems by disconnecting them from the network.
+    * Identify and stop any ongoing ransomware encryption processes.
+
+2. **Assess the Situation:**
+    * Determine the extent of the attack (affected systems, data encrypted).
+    * Identify the type of ransomware and its potential impact.
+
+3. **Secure Evidence:**
+    * Make backups of unencrypted data for potential recovery.
+    * Preserve system logs and other forensic evidence for investigation.
+
+4. **Communication & Decision Making:**
+    * Notify relevant stakeholders (IT team, management, legal) about the incident.
+    * Evaluate options for recovery (backups, decryption tools, negotiation).
+
+5. **Incident Response & Forensics:**
+    * Initiate a formal incident response plan to investigate the attack and recover systems.
+    * Conduct forensic analysis to determine the attack origin and timeline.
+
+**Evaluation Criteria:**
+
+* Demonstrates a systematic approach to isolating and containing a ransomware attack.
+* Identifies key steps for assessing the situation and securing evidence for forensic analysis.
+* Emphasizes the importance of communication and decision-making during an incident response.
+
+**3. Theoretical (Security Monitoring):**
+
+**Expected Answer:**
+
+* **Intrusion Detection System (IDS):** Monitors network traffic and system activity for suspicious behavior that might indicate an attack attempt. 
+    * IDS analyzes events based on predefined signatures or anomalies and generates alerts.
+    * It provides visibility into potential threats but doesn't actively block attacks.
+
+* **Intrusion Prevention System (IPS):** Continuously monitors network traffic and enforces security policies.  
+    * IPS can analyze packets and block suspicious traffic based on predefined rules or attack signatures.
+    * It actively prevents attacks from reaching critical systems in real-time.
+
+**Evaluation Criteria:**
+
+* Accurately differentiates between Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS).
+* Explains the role of each system in network security monitoring.
+* Highlights the key difference between detection and prevention capabilities of IDS and IPS.
+
+**4. Hands-on (Security Logging):**
+
+**(Example Script - Python)**
+
+```python
+def parse_system_logs(log_file):
+  """Parses system logs and identifies suspicious activity."""
+  suspicious_entries = []
+  with open(log_file, 'r') as f:
+    for line in f:
+      if "failed login" in line or "unusual access" in line:
+        suspicious_entries.append(line)
+  return suspicious_entries
+
+# Example usage
+log_file = "/var/log/auth.log"
+suspicious_logs = parse_system_logs(log_file)
+
+if suspicious_logs:
+  print("Following log entries indicate potential suspicious activity:")
+  for entry in suspicious_logs:
+    print(entry)
+else:
+  print("No suspicious activity identified in the log file.")
+```
+
+**Evaluation Criteria:**
+
+* The script parses system log entries based on predefined keywords for suspicious activity.
+* The script identifies log entries that might indicate potential security incidents.
+* It demonstrates basic log analysis capabilities to detect anomalies.
+
+I apologize for the incomplete answer in the previous response. Here's the full answer for question 5 (Container Security) including best practices for vulnerability scanning:
+
+**5. Container Security:**
+
+**Best Practices for Securing Container Images and Registries:**
+
+* **Access Control:**
+    * Implement strong access control mechanisms to restrict access to the registry.
+    * Utilize role-based access control (RBAC) to grant appropriate permissions for different users (e.g., read-only access for developers, push access for authorized builders).
+    * Use multi-factor authentication (MFA) for added security when accessing the registry.
+
+* **Vulnerability Scanning:**
+    * Integrate vulnerability scanners into the CI/CD pipeline to scan container images for known vulnerabilities before pushing them to the registry.
+    * Regularly scan container images stored in the registry to identify and address potential vulnerabilities.
+    * Utilize vulnerability databases like National Vulnerability Database (NVD) to stay updated about security threats.
+
+* **Image Signing:**
+    * Implement image signing using cryptographic signatures to ensure image integrity and authenticity.
+    * This helps verify that the image hasn't been tampered with during storage or transfer.
+    * Use a trusted signing key and restrict access to the signing process.
+
+* **Minimize Image Size:**
+    * Build container images with minimal dependencies and libraries to reduce the attack surface.
+    * Smaller images are easier to scan for vulnerabilities and manage.
+
+* **Use Official Base Images:**
+    * Whenever possible, utilize official base images from trusted sources like container image repositories (e.g., Docker Hub).
+    * Official images are typically well-maintained and less likely to contain vulnerabilities.
+
+* **Keep Software Updated:**
+    * Regularly update the operating system and application packages within container images to address security patches.
+    * This helps mitigate vulnerabilities discovered after the image build.
+
+* **Monitor Registry Activity:**
+    * Monitor registry activity for suspicious actions like unauthorized access attempts or unusual download patterns.
+    * Utilize log analysis tools to detect potential security incidents.
+
+**Benefits of Implementing These Practices:**
+
+* Reduces the risk of deploying vulnerable container images to production environments.
+* Enhances the overall security posture of containerized applications.
+* Promotes secure development practices for containerized workloads.
+
+**Evaluation Criteria:**
+
+* Identifies key best practices for securing container registries.
+* Explains the importance of access control, vulnerability scanning, and image signing.
+* Demonstrates an understanding of how these practices contribute to container security.
+    
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+
 **Set 5**
 
 1. **Hands-on (Security Tool):**  Explore a vulnerability scanner tool like Nessus or OpenVAS. Write steps on how to use the tool to scan a system for vulnerabilities and generate a report.
 2. **Situation-based (Physical Security):** A server room access badge is lost. Explain the steps you would take to secure the server room and prevent unauthorized access.
 3. **Theoretical (Penetration Testing):** Briefly explain the different phases of a penetration testing methodology and the ethical considerations involved.
 4. **Hands-on (Security Awareness Training):** Develop a short security awareness training module for employees on best practices for identifying and avoiding phishing attacks.
-5. **Cloud Security:** Discuss the concept of Infrastructure as Code (IaC) and its security implications for managing cloud resources. 
+5. **Cloud Security:** Discuss the concept of Infrastructure as Code (IaC) and its security implications for managing cloud resources.
+
+## Set 5: Answers and Evaluation Criteria
+
+**1. Hands-on (Security Tool):**
+
+**Exploring Vulnerability Scanners:**
+
+Here's a general approach using Nessus (remember specific steps might vary depending on the tool):
+
+* **Download and Install:** Download and install Nessus from the official Tenable website (commercial) or OpenVAS (open-source) following their installation guides.
+* **Configure Targets:** Define the target system or network segment you want to scan. Nessus offers options like hostname, IP address, or importing a file with target lists.
+* **Select Scan Policies:** Choose a pre-defined scan policy or create a custom one to specify the types of vulnerabilities to scan for (e.g., basic network scans, detailed configuration audits).
+* **Launch the Scan:** Initiate the scan and monitor its progress within the scanner interface.
+* **Analyze Results:** Once the scan finishes, review the generated report. It typically includes identified vulnerabilities, severity levels, potential impact, and remediation guidance.
+
+**Evaluation Criteria:**
+
+* Demonstrates an understanding of using a vulnerability scanner like Nessus or OpenVAS.
+* Explains the key steps involved in configuring and launching a vulnerability scan.
+* Highlights the importance of analyzing scan reports to identify and address vulnerabilities.
+
+**2. Situation-based (Physical Security):**
+
+**Lost Server Room Access Badge:**
+
+* **Immediate Actions:**
+    * Deactivate the lost access badge to prevent unauthorized entry.
+    * Increase security personnel presence around the server room to monitor access attempts.
+    * If possible, change the server room door locks to require a new access key immediately.
+* **Long-Term Measures:**
+    * Issue new access badges to all authorized personnel.
+    * Implement two-factor authentication for server room access (badge + PIN/biometric).
+    * Review access logs to identify any suspicious activity around the time the badge was lost.
+    * Consider implementing video surveillance around the server room entrance.
+
+**Evaluation Criteria:**
+
+* Identifies a logical sequence of steps to secure the server room after a lost access badge.
+* Emphasizes the importance of immediate actions and long-term solutions to prevent unauthorized access.
+* Demonstrates an understanding of layered security principles for physical access control.
+
+**3. Theoretical (Penetration Testing):**
+
+**Phases of Penetration Testing Methodology:**
+
+* **Reconnaissance:** Gathering information about the target system (operating system, network topology, applications).
+* **Enumeration:** Identifying vulnerabilities in the target system (open ports, services, misconfigurations).
+* **Exploitation:** Attempting to exploit identified vulnerabilities to gain unauthorized access or control.
+* **Post-Exploitation:** Maintaining access to the system, escalating privileges, and exploring further vulnerabilities.
+* **Reporting:** Documenting the findings, including identified vulnerabilities, exploitation techniques, and recommendations for remediation.
+
+**Ethical Considerations:**
+
+* **Authorization:** Penetration testing must be authorized by the owner of the target system.
+* **Scope definition:** Clearly defined scope outlines the authorized testing activities.
+* **Data confidentiality:** Testers must maintain confidentiality of any sensitive data accessed during the test.
+* **Reporting:** Test results should be reported to authorized personnel and addressed promptly.
+
+**Evaluation Criteria:**
+
+* Accurately defines the different phases of a penetration testing methodology.
+* Explains the key ethical considerations that testers must adhere to during penetration testing.
+* Demonstrates an understanding of responsible and ethical penetration testing practices.
+
+**4. Hands-on (Security Awareness Training):**
+
+**Phishing Awareness Training Module:**
+
+**Introduction:** Briefly explain the concept of phishing attacks, their goals (stealing credentials, data, or installing malware).
+
+**Identifying Red Flags:** Highlight common signs of phishing emails:
+
+* **Suspicious sender addresses:** Don't trust emails from unknown senders or addresses that don't match the displayed name.
+* **Urgent or threatening language:** Phishing emails often create a sense of urgency or fear to pressure recipients into clicking links.
+* **Generic greetings:** Generic salutations like "Dear Customer" are red flags compared to personalized greetings.
+* **Grammatical errors and typos:** Professional emails from legitimate companies are unlikely to contain typos or grammatical errors.
+* **Suspicious attachments or links:** Never click on unsolicited attachments or links in emails, especially from unknown senders.
+
+**Best Practices:**
+
+*  **Verify sender legitimacy:** Before responding or clicking anything, verify the sender's identity through independent channels.
+* **Don't enter personal information:** Never provide sensitive information like passwords or credit card details via email.
+* **Report suspicious emails:** Report suspicious emails to the IT security team for investigation.
+
+**Evaluation Criteria:**
+
+* Develops a clear and concise training module for employees on identifying phishing attacks.
+* Emphasizes key red flags and best practices to avoid falling victim to phishing scams.
+* Promotes a culture of security awareness among employees to protect organizational
+
+Infrastructure as Code (IaC):
+
+Infrastructure as Code (IaC) is a practice of managing and provisioning cloud infrastructure through code files. These code files define the configuration of cloud resources (servers, networks, storage) in a human-readable and version-controlled format.
+
+Security Implications of IaC:
+
+Benefits:
+
+Consistency and Repeatability: IaC ensures consistent and repeatable deployments, reducing configuration errors that can create security vulnerabilities.
+Automation: Automating infrastructure provisioning allows for faster deployments and minimizes manual configuration errors.
+Auditability: Version control of IaC code facilitates tracking changes and identifying potential security misconfigurations.
+Security Considerations:
+
+Misconfiguration Errors: Errors in IaC code can lead to unintended security vulnerabilities in deployed infrastructure.
+Access Control: Securely manage access to IaC repositories to prevent unauthorized modifications.
+Least Privilege: Implement the principle of least privilege when defining permissions within IaC scripts.
+Security Scanning: Integrate security scanning tools into the CI/CD pipeline to identify potential vulnerabilities in IaC code before deployment.
+Evaluation Criteria:
+
+Accurately defines the concept of Infrastructure as Code (IaC) in the context of cloud security.
+Explains the benefits of IaC for security, including consistency, repeatability, and auditability.
+Identifies potential security considerations associated with IaC, such as misconfigurations and access control.
+Demonstrates an understanding of secure IaC practices like least privilege and security scanning.
