@@ -715,3 +715,75 @@ Demonstrates an understanding of secure IaC practices like least privilege and s
 * Explains common social engineering techniques (e.g., phishing, pretexting, baiting).
 * Identifies red flags and suspicious behaviors associated with social engineering attempts.
 * Discusses training methods to educate employees on social engineering tactics and best practices for avoiding them (e.g., verification procedures, not clicking suspicious links).
+
+---------------------------
+## Set 6
+
+
+**1. Security Frameworks and Methodologies (Topic 1):**
+
+**Question:** Briefly differentiate between the following security frameworks and methodologies:
+
+* **TOGAF vs. SABSA:**
+* **COBIT vs. ITIL:**
+* **CISM vs. CISM 2** (Assuming CISM 2 refers to a more advanced level)
+
+**Evaluation Criteria:**
+
+* Accurately defines the purpose of each framework/methodology.
+* Identifies key differences between the frameworks in terms of their scope and focus (e.g., TOGAF for enterprise architecture vs. SABSA for security architecture).
+
+**2. Security Automation and Scripting (Topic 2):**
+
+**Question:**
+
+  * **Part A (Automation):** Describe the benefits of integrating security automation into a DevOps pipeline.
+  * **Part B (Security Scripting):** Write a Python script to scan a website for broken links using the `requests` library. (Consider including error handling and informative output).
+
+**Evaluation Criteria:**
+
+  * **Part A:** Explains the benefits of security automation in DevOps pipelines (e.g., faster vulnerability scanning, improved consistency, reduced manual effort).
+  * **Part B:** Demonstrates the ability to write a functional Python script using `requests` to identify broken links on a website (consider including error handling and informative output for identified broken links).
+
+**3. Threat Modeling (Mandatory - Data Flow and Threat Identification) (Topic 3):**
+
+**Scenario:** You are developing a new cloud-based document storage application. Create a threat model that identifies potential threats and vulnerabilities associated with user uploads, document sharing, and access control functionalities.
+
+**Expected Answer:**
+
+* **Data Flow:** Diagram the application workflow, including user interactions for uploading and sharing documents, data storage in the cloud, and access control mechanisms.
+* **Threats:** Identify potential threats at each stage, such as unauthorized access to documents, data breaches during storage, and malware injection through uploaded files.
+* **Vulnerabilities:** Analyze potential vulnerabilities in the application or system that could be exploited by the identified threats (e.g., insecure file upload validation, weak encryption for stored documents, lack of granular access controls).
+* **Countermeasures:** Propose mitigation strategies to address the identified vulnerabilities (e.g., input validation for file types and sizes, strong encryption for documents at rest and in transit, implementing role-based access control (RBAC) for document sharing).
+
+**Evaluation Criteria:**
+
+* The threat model accurately reflects the data flow of the cloud-based document storage application.
+* Potential threats and vulnerabilities are identified for user uploads, document sharing, and access control functionalities.
+* Countermeasures are proposed to address the identified vulnerabilities and mitigate the associated threats.
+* The threat model demonstrates a logical thought process for identifying potential security risks.
+
+**4. Security Standards and Benchmarks (Topic 4):**
+
+**Question:**
+
+  * **Part A (NIST):** Briefly explain the core functions of the NIST Cybersecurity Framework (CSF).
+  * **Part B (CIS Benchmark):** Describe how CIS Benchmarks can be used to improve the security posture of containerized applications deployed in a cloud environment.
+
+**Evaluation Criteria:**
+
+  * **Part A:** Explains the core functions of the NIST CSF (e.g., identify, protect, detect, respond, recover).
+  * **Part B:** Explains how CIS Benchmarks provide secure configuration guidelines for container platforms and container images, assisting in hardening containerized applications deployed in a cloud environment and mitigating security risks.
+
+**5. Cloud Security and Container Security (Topic 5):**
+
+**Question:**
+
+  * **Part A (Cloud Security):** Discuss the importance of IAM (Identity and Access Management) in securing cloud resources within a multi-tenant environment.
+  * **Part B (Container Security):** Explain best practices for securing container registries, including access control and vulnerability scanning.
+
+**Evaluation Criteria:**
+
+  * **Part A:** Explains the importance of IAM in a multi-tenant cloud environment, including granular access control mechanisms for users and resources (e.g., IAM roles, policies).
+  * **Part B:** Identifies best practices for securing container registries, including strong access control (e.g., RBAC for registry access), vulnerability scanning for container images before pushing to the registry, and potentially integrating with vulnerability databases for threat intelligence.
+
