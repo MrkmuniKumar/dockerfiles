@@ -1,7 +1,5 @@
-## Consolidated Hands-On Security Questions (First 5 Sets)
 
-Here are the first 5 sets of hands-on security questions, with no repetition, containing five unique questions each:
-
+-------------------------------------------------------------------------------------------------------------------------------------------
 **Set 1**
 
 1. **Hands-on (RBAC & NIST):** Design a Role-Based Access Control (RBAC) model for a three-tier e-commerce application using the NIST Special Publication 800-30 framework. Identify user roles, permissions, and access levels for each tier.
@@ -125,6 +123,7 @@ STRIDE is a threat modeling methodology used to identify potential security thre
 * **Repudiation:** Denying involvement in an action.
 * **Information Disclosure:** Unauthorized access to confidential information.
 * **Denial of Service (DoS):** Disrupting normal system
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 **Set 2**
 
@@ -234,6 +233,7 @@ The NIST Cybersecurity Framework (CSF) defines five core functions to manage cyb
 * Accurately describes the five core functions of the NIST Cybersecurity Framework.
 * Explains the role of each function in managing cybersecurity risk.
 * Demonstrates an understanding of the comprehensive approach advocated by the
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 **Set 3**
 
