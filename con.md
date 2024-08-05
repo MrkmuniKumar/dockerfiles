@@ -1,4 +1,4 @@
-Certainly! Here’s the regenerated response with detailed security controls for Azure DevOps self-hosted agents running in EKS, categorized by specific domains and aligned with relevant NIST and CIS references. Each control will mention EKS components and provide fine-grained controls.
+
 
 ### Anti-Malware
 
@@ -65,9 +65,7 @@ Certainly! Here’s the regenerated response with detailed security controls for
 | **Security Control**                                                                                  | **NIST SP 800-53 Reference** | **CIS Control Reference** | **CIS AWS EKS Benchmark** |
 |-------------------------------------------------------------------------------------------------------|------------------------------|----------------------------|---------------------------|
 | Implement data loss prevention (DLP) tools to monitor and control data flows in EKS.                  | SI-4, SI-7                   | CIS Control 13.10          | 7.2                       |
-| Use encryption to protect sensitive data in transit and at rest in EKS.                               | SC-13, SC-28                 | CIS Control 13.1           | 
-
-2.5, 2.6                   |
+| Use encryption to protect sensitive data in transit and at rest in EKS.                               | SC-13, SC-28                 | CIS Control 13.1           | 2.5, 2.6                   |
 | Restrict access to sensitive data based on roles and responsibilities in EKS.                         | AC-3, AC-6                   | CIS Control 16.1           | 1.10, 1.11                 |
 | Monitor and log access to sensitive data within EKS using security monitoring tools.                  | AU-2, AU-12                  | CIS Control 6.1            | 3.1, 3.2                   |
 | Implement network segmentation and isolation to protect sensitive data areas in EKS.                  | SC-7, SC-12                  | CIS Control 12.1           | 5.7                       |
