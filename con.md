@@ -131,9 +131,7 @@ Certainly! Here’s the regenerated response with detailed security controls for
 | Encrypt network traffic between EKS components and external services.                                 | SC-12, SC-13                 | CIS Control 13.9, 13.10    | 4.1, 4.2                   |
 | Regularly audit network configurations and policies in EKS.                                           | CA-7, CA-2                   | CIS Control 12.10          | 5.7                       |
 | Monitor network traffic for anomalies and potential security incidents in EKS.                        | SI-4, AU-12                  | CIS Control 12.11          | 3.1, 3.2                   |
-| Implement network segmentation to isolate sensitive workloads within EKS.                             | SC-7
-
-, SC-12                  | CIS Control 12.9           | 5.7                       |
+| Implement network segmentation to isolate sensitive workloads within EKS.                             | SC-7, SC-12                  | CIS Control 12.9           | 5.7                       |
 | Use security groups to control access to EKS worker nodes and control plane.                          | SC-7, SC-12                  | CIS Control 12.10          | 5.7                       |
 | Implement automated alerts for unauthorized network access attempts in EKS.                           | SI-4, AU-12                  | CIS Control 12.11          | 3.3                       |
 | Regularly review and update network security policies for EKS.                                        | CM-3, CM-4                   | CIS Control 12.12          | 7.2                       |
@@ -212,7 +210,7 @@ Certainly! Here’s the regenerated response with detailed security controls for
 | Implement log retention policies to comply with legal and regulatory requirements.                    | AU-11                        | CIS Control 6.8            | 3.1, 3.2                   |
 | Use automated tools to correlate and analyze log data from multiple sources.                          | AU-6, SI-4                   | CIS Control 6.7            | 3.1, 3.2                   |
 | Provide training on logging and monitoring best practices for teams managing EKS.                     | AT-2, AT-3                   | CIS Control 6.7            | 9.1, 9.2                   |
-| Implement alerts for critical log events that require immediate attention.                            | SI-4, AU-12                  | CIS Control 6.7            | 3.3                       |
+| Implement alerts for critical log events that require immediate attention.                            | SI-4, AU-12                  | CIS Control 6.7            | 3.3                        |
 | Conduct regular audits of logging and monitoring configurations and practices.                        | CA-2, CA-7                   | CIS Control 6.7            | 8.1, 8.2                   |
 | Ensure logging and monitoring tools are configured to capture relevant security events and metrics.   | AU-2, AU-12                  | CIS Control 6.7            | 3.1, 3.2                   |
 
@@ -235,7 +233,6 @@ Certainly! Here’s the regenerated response with detailed security controls for
 
 
 
-Certainly! Here are the detailed security controls for the remaining domains, including the specific EKS components and aligned with relevant NIST and CIS references:
 
 ### Secure Asset Management
 
@@ -302,15 +299,13 @@ Certainly! Here are the detailed security controls for the remaining domains, in
 | **Security Control**                                                                                  | **NIST SP 800-53 Reference** | **CIS Control Reference** | **CIS AWS EKS Benchmark** |
 |-------------------------------------------------------------------------------------------------------|------------------------------|----------------------------|---------------------------|
 | Implement centralized logging for all EKS components and applications.                                | AU-2, AU-12                  | CIS Control 6.7            | 3.1, 3.2                   |
-| Use monitoring
-
- tools to detect and alert on security events in EKS.                                   | SI-4, AU-12                  | CIS Control 6.7            | 3.1, 3.2                   |
+| Use monitoring tools to detect and alert on security events in EKS.                                   | SI-4, AU-12                  | CIS Control 6.7            | 3.1, 3.2                   |
 | Regularly review and analyze logs for suspicious activities and anomalies.                            | AU-6, SI-4                   | CIS Control 6.7            | 3.1, 3.2                   |
 | Ensure logs are protected from unauthorized access and tampering.                                     | AU-9, AU-10                  | CIS Control 6.8            | 3.1, 3.2                   |
 | Implement log retention policies to comply with legal and regulatory requirements.                    | AU-11                        | CIS Control 6.8            | 3.1, 3.2                   |
 | Use automated tools to correlate and analyze log data from multiple sources.                          | AU-6, SI-4                   | CIS Control 6.7            | 3.1, 3.2                   |
 | Provide training on logging and monitoring best practices for teams managing EKS.                     | AT-2, AT-3                   | CIS Control 6.7            | 9.1, 9.2                   |
-| Implement alerts for critical log events that require immediate attention.                            | SI-4, AU-12                  | CIS Control 6.7            | 3.3                       |
+| Implement alerts for critical log events that require immediate attention.                            | SI-4, AU-12                  | CIS Control 6.7            | 3.3                        |
 | Conduct regular audits of logging and monitoring configurations and practices.                        | CA-2, CA-7                   | CIS Control 6.7            | 8.1, 8.2                   |
 | Ensure logging and monitoring tools are configured to capture relevant security events and metrics.   | AU-2, AU-12                  | CIS Control 6.7            | 3.1, 3.2                   |
 
