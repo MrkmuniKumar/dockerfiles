@@ -150,6 +150,39 @@ Certainly! Below is an updated version of **Table 1** that includes the policy d
 
 5. **File Upload Protection**: This rule restricts the size of files that can be uploaded via the application. If a file exceeds the maximum allowed size (e.g., 10MB), the WAF blocks the upload, protecting the server from potential resource exhaustion attacks.
 
+
+
+
+Certainly! Below is an updated version of the **HTTP Rule** table that uses the **`notIn`** operator to block any HTTP methods that are not part of the standard methods (`GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS`).
+
+### **Consolidated Table: Custom Rules for HTTP, Bot Protection, and Geo-Restriction**
+
+| **Rule Name**                 | **Description**                                                   | **Match Variables**                              | **Operator**           | **Match Values**                                                                    | **Action** | **Priority** | **Purpose/Impact**                                                                 |
+|-------------------------------|-------------------------------------------------------------------|-------------------------------------------------|------------------------|-------------------------------------------------------------------------------------|------------|--------------|-------------------------------------------------------------------------------------|
+| **HTTP Rule**                 | Detects and blocks requests with malformed headers.               | `RequestHeaders`                                | `Contains`              | `\r\n`, `\n`, `\r`, `:`, `;;`, `\0`                                                 | `Block`    | 1            | Prevents attacks using malformed headers, such as HTTP Response Splitting or Injection. |
+| **HTTP Rule**                 | Detects and blocks non-standard or potentially dangerous HTTP methods. | `RequestMethod`                                | `notIn`                 | `["GET", "HEAD", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]`                     | `Block`    | 2            | Ensures that only standard, allowed HTTP methods are used, blocking non-standard methods that could be exploited. |
+| **HTTP Rule**                 | Detects and blocks requests with unusual payloads.                | `RequestBody`<br>`RequestHeaders['Content-Type']` | `SizeGreaterThan`<br>`Equal` | `1048576` (1 MB size limit)<br>`application/octet-stream`, `text/xml`, `application/x-www-form-urlencoded` | `Block`    | 3            | Protects against attacks using unusually large payloads or unexpected content types. |
+| **Bot Protection**            | Detects and blocks requests from known bad bots.                  | `RequestHeaders['User-Agent']`                  | `Equal`                 | `BadBot`, `EvilBot`, `Scrapy`, `Python-urllib`, `libwww-perl`, `curl`, `wget`      | `Block`    | 4            | Prevents access from bots known to engage in scraping, brute force, and other malicious activities. |
+| **Bot Protection**            | Detects and blocks requests from headless browsers.               | `RequestHeaders['User-Agent']`                  | `Contains`              | `HeadlessChrome`, `PhantomJS`, `SlimerJS`, `Zombie`, `Node.js`                     | `Block`    | 5            | Blocks requests from headless browsers often used in automated attacks and scraping. |
+| **Bot Protection**            | Detects and blocks requests with empty or missing user-agent headers. | `RequestHeaders['User-Agent']`                  | `Equal`                 | `""` (Empty String)                                                                | `Block`    | 6            | Prevents access from bots and scripts that do not provide a user-agent, a common characteristic of malicious activity. |
+| **Geo-Restriction**           | Blocks access from sanctioned countries.                          | `RequestHeaders['X-Forwarded-For']`<br>`GeoIP`  | `In`                    | List of sanctioned countries, e.g., `IR`, `KP`, `SY`, `CU`, `RU`, `VE`, `SD`       | `Block`    | 7            | Prevents access to the application from countries under international sanctions.     |
+
+### Summary:
+
+- **HTTP Rule**: 
+  - **Malformed Headers**: Blocks requests with improperly formatted or suspicious headers.
+  - **Non-Standard HTTP Methods**: Blocks HTTP methods that are not part of the standard set (`GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS`) to prevent exploitation through unsupported or unsafe methods.
+  - **Unusual Payloads**: Blocks requests with unusually large payloads or unexpected content types.
+
+- **Bot Protection**:
+  - **Known Bad Bots**: Blocks traffic from bots known for malicious activities based on their User-Agent string.
+  - **Headless Browsers**: Blocks requests from headless browsers, often used for automated attacks.
+  - **Empty User-Agent**: Blocks requests where the User-Agent header is missing or empty.
+
+- **Geo-Restriction**:
+  - **Sanctioned Countries**: Blocks access to your application from countries under international sanctions.
+
+This version of the table clearly separates each rule's functionality while ensuring that HTTP methods outside the standard set are effectively blocked.
 6. **Logging and SIEM Integration**: This ensures that all actions taken by the WAF are logged and stored for later analysis. These logs are also forwarded to a SIEM system for centralized monitoring, enabling real-time alerting and incident response.
 
 These customized rules in the **BaseWAFPolicy** ensure that you have a robust defense against common web application threats while allowing for flexibility and adaptability in response to specific organizational needs.
