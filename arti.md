@@ -82,3 +82,17 @@ In **Threat 2**, the concern is a **remote code execution (RCE)** vulnerability 
    - **Artifact Integrity Checks**: Implement strong artifact integrity checks to ensure that no tampered or malicious artifacts are deployed.
 
 In summary, even though **only the pipeline** has access to Artifactory, an attacker can target **the pipeline itself** to obtain its API tokens or credentials. Once they have those credentials, they can interact with Artifactory **through the pipeline’s access**, exploiting the RCE vulnerability to gain remote code execution on the Artifactory server.
+
+Here is the updated table with CVSS scores for the vulnerabilities in **JFrog Artifactory version 7.71.23**:
+
+| **CVE ID**        | **Vulnerability Description**                                                                                 | **Severity (CVSS Score)** | **Fixed in Version** |
+|-------------------|---------------------------------------------------------------------------------------------------------------|---------------------------|----------------------|
+| **CVE-2024-6915** | Improper input validation leading to cache poisoning.                                                          | Critical (9.3)             | 7.77.14              |
+| **CVE-2024-4142** | Privilege escalation via improper input validation, allowing low-privileged users to gain admin access.         | Critical (9.8)             | 7.77.11              |
+| **CVE-2024-3505** | Sensitive information disclosure via proxy configuration access by low-privileged users.                       | Medium (4.3)               | 7.77.3               |
+| **CVE-2024-2248** | Header injection vulnerability, allowing account takeover via malicious URLs sent to users.                    | Medium (6.5)               | 7.84.7               |
+| **CVE-2023-42662**| Exposure of user access tokens via improper handling of CLI/IDE browser-based SSO integration.                  | Critical (8.8)             | 7.71.8               |
+| **CVE-2024-2247** | DOM-based cross-site scripting due to improper handling of the import override mechanism.                       | High (7.4)                 | 7.77.7               |
+| **CVE-2023-42661**| Arbitrary file write of untrusted data leading to potential DoS or remote code execution.                       | High (7.8)                 | 7.76.2               |
+
+This table provides a concise view of vulnerabilities along with their severity (CVSS score) and the fixed versions.
