@@ -142,8 +142,6 @@
 | Develop and implement an incident response plan tailored to the isolated environment.                           | IR-1, IR-4          | CIS Control 19.1 | Establish a clear framework for responding to incidents.  | T1078 (Valid Accounts)                      |
 | Conduct regular incident response drills and tabletop exercises.                                                | IR-3, IR-4          | CIS Control 19.3 | Prepare the team to effectively handle real-world incidents.| T1078 (Valid Accounts)                     |
 | Use automated tools to detect, log, and respond to security incidents within the environment.                   | SI-4, IR-4          | CIS Control 19.2 | Quickly identify and address security events.              | T1110 (Brute Force)                        
-
- |
 | Define roles and responsibilities for each team member involved in incident response.                           | IR-1, IR-2          | CIS Control 19.4 | Establish accountability and efficiency in incident handling.| T1078 (Valid Accounts)                    |
 | Maintain incident response playbooks for common attack scenarios.                                               | IR-4, IR-8          | CIS Control 19.5 | Standardize response procedures for various incidents.     | T1190 (Exploit Public-Facing Application)   |
 | Enable continuous logging of all critical events and activities within the environment.                         | AU-2, AU-12         | CIS Control 6.7  | Create a comprehensive log trail for incident investigation.| T1070 (Indicator Removal on Host)          |
