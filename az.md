@@ -51,9 +51,7 @@
 | Implement a centralized certificate management process for issuing and managing digital certificates.           | SC-12, SC-17        | CIS Control 16.3 | Prevent mismanagement and misuse of certificates.          | T1132 (Data Encoding)                       |
 | Regularly audit digital certificates and enforce automated renewals to avoid expiration.                        | SC-12, SC-13        | CIS Control 16.5 | Ensure continuous validity and trust in certificates.      | T1132 (Data Encoding)                       |
 | Monitor certificate usage across the environment and restrict export of private keys.                           | AU-2, SC-12         | CIS Control 16.6 | Prevent theft or misuse of private keys.                   | T1070 (Indicator Removal on Host)           |
-| Use secure algorithms and key lengths for
-
- all digital certificates in use.                                      | SC-12, SC-13        | CIS Control 16.8 | Strengthen cryptographic trust and resistance to attacks.  | T1071 (Application Layer Protocol)          |
+| Use secure algorithms and key lengths for all digital certificates in use.                                      | SC-12, SC-13        | CIS Control 16.8 | Strengthen cryptographic trust and resistance to attacks.  | T1071 (Application Layer Protocol)          |
 | Restrict administrative access to certificate authorities and management tools.                                 | AC-6, AC-17         | CIS Control 16.7 | Mitigate insider risks and unauthorized changes.           | T1110 (Brute Force)                         |
 | Implement automatic alerts for certificate expirations and policy violations.                                   | AU-2, AU-12         | CIS Control 16.11| Avoid security gaps due to expired or invalid certificates. | T1053 (Scheduled Task/Job)                  |
 | Configure logging for all certificate issuance, revocation, and usage events.                                   | AU-2, AU-12         | CIS Control 6.7  | Track and audit certificate-related activities.            | T1070 (Indicator Removal on Host)           |
